@@ -4,39 +4,27 @@ class Ave(Animal):
     aguilas = 0
     _listado=[]
 
-    def __init__(self, nombre, edad, habitat, genero, zona, colorPlumas):
-        if zona != None:
-            super.__init__(nombre,edad,habitat,genero,zona)
-            self._colorPlumas = colorPlumas
-            Ave._listado.append(self)
-        else:
-            super.__init__(nombre,edad,habitat,genero)
-            self._colorPlumas = colorPlumas
-            Ave._listado.append(self)
-
+    def __init__(self, nombre, edad, habitat, genero, colorPlumas):
+        super.__init__(nombre,edad,habitat,genero)
+        self._colorPlumas = colorPlumas
+        Ave._listado.append(self)
+     
     @classmethod
     def cantidadAves(cls):
-        if cls._listado != None:
-            return len(cls._listado)
-        else:
-            return 0
-
+        return len(cls._listado)
+       
     def movimiento():
         return "volar"
 
     @classmethod
     def crearHalcon(cls,nombre,edad,genero):
-        halcon = cls(nombre, edad, "montanas", genero, "cafe glorioso")
-        cls._listado.append(halcon)
         cls.halcones += 1
-        return halcon
+        return cls(nombre, edad, "montanas", genero, "cafe glorioso")
 
     @classmethod
     def crearAguila(cls,nombre,edad,genero):
-        aguila = cls(nombre, edad, "montanas", genero, "blanco y amarillo")
-        cls._listado.append(aguila)
         cls.aguilas += 1
-        return aguila
+        return cls(nombre, edad, "montanas", genero, "blanco y amarillo")
 
     @classmethod
     def getListado(cls):

@@ -4,41 +4,29 @@ class Anfibio(Animal):
     salamandras = 0
     _listado=[]
 
-    def __init__(self, nombre, edad, habitat, genero, zona, colorPiel, venenoso):
-        if zona != None:
-            super.__init__(nombre,edad,habitat,genero,zona)
-            self._colorPiel = colorPiel
-            self._venenoso = venenoso
-            Anfibio._listado.append(self)
-        else:
+    def __init__(self, nombre, edad, habitat, genero, colorPiel, venenoso):
             super.__init__(nombre,edad,habitat,genero)
             self._colorPiel = colorPiel
             self._venenoso = venenoso
             Anfibio._listado.append(self)
-
+  
     @classmethod
     def cantidadAnfibios(cls):
-        if cls._listado != None:
-            return len(cls._listado)
-        else:
-            return 0
+        return len(cls._listado)
+         
 
     def movimiento():
         return "saltar"
 
     @classmethod
     def crearRana(cls,nombre,edad,genero):
-        rana = cls(nombre,edad,"selva",genero,"rojo",True)
-        cls._listado.append(rana)
         cls.ranas += 1
-        return rana
+        return cls(nombre,edad,"selva",genero,"rojo",True)
 
     @classmethod
     def crearSalamandra(cls,nombre,edad,genero):
-        salamandra = cls(nombre,edad,"selva",genero,"negro y amarilli",False)
-        cls._listado.append(salamandra)
         cls.salamandras += 1
-        return salamandra
+        return cls(nombre,edad,"selva",genero,"negro y amarilli",False)
 
     @classmethod
     def getListado(cls):

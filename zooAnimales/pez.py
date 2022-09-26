@@ -4,41 +4,29 @@ class Pez(Animal):
     bacalaos = 0
     _listado=[]
 
-    def __init__(self, nombre, edad, habitat, genero, zona, colorEscamas, cantidadAletas):
-        if zona != None:
-            super.__init__(nombre,edad,habitat,genero,zona)
-            self._colorEscamas = colorEscamas
-            self._cantidadAletas = cantidadAletas
-            Pez._listado.append(self)
-        else:
-            super.__init__(nombre,edad,habitat,genero)
-            self._colorEscamas = colorEscamas
-            self._cantidadAletas = cantidadAletas
-            Pez._listado.append(self)
+    def __init__(self, nombre, edad, habitat, genero, colorEscamas, cantidadAletas):
+        super.__init__(nombre,edad,habitat,genero)
+        self._colorEscamas = colorEscamas
+        self._cantidadAletas = cantidadAletas
+        Pez._listado.append(self)
+    
 
     @classmethod
     def cantidadPeces(cls):
-        if cls._listado != None:
-            return len(cls._listado)
-        else:
-            return 0
+        return len(cls._listado)
 
     def movimiento():
         return "nadar"
 
     @classmethod
     def crearSalmon(cls,nombre,edad,genero):
-        salmon = cls(nombre, edad, "oceano", genero, "rojo",6)
-        cls._listado.append(salmon)
         cls.salmones += 1
-        return salmon
+        return cls(nombre, edad, "oceano", genero, "rojo",6)
 
     @classmethod
     def crearBacalao(cls,nombre,edad,genero):
-        bacalao = cls(nombre, edad, "oceano", genero, "gris", 6)
-        cls._listado.append(bacalao)
         cls.bacalaos += 1
-        return bacalao
+        return cls(nombre, edad, "oceano", genero, "gris", 6)
 
     @classmethod
     def getListado(cls):
