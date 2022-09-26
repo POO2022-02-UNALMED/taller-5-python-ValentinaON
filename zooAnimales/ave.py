@@ -35,8 +35,8 @@ class Ave(Animal):
         cls._listado = listado
 
     def getColorPlumas(self):
-        return self._colorPiel
+        return self._colorPlumas
     
-    def setColorPlumas(self, colorPiel):
-        self._colorPiel = colorPiel
+    def setColorPlumas(self, colorPlumas):
+        self._colorPlumas = colorPlumas
 
