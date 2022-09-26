@@ -28,14 +28,6 @@ class Animal:
         else:
             return f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}"
 
-    @classmethod   
-    def getTotalAnimales(cls):
-        return cls._totalAnimales
-
-    @classmethod
-    def setTotalAnimales(cls, totalAnimales):
-        cls._totalAnimales = totalAnimales    
-
     def getNombre(self):
         return self._nombre
 
