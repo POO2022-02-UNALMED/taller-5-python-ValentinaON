@@ -3,13 +3,13 @@ class Zoologico:
         self._nombre = nombre
         self._ubicacion = ubicacion
         self._zonas = []
-        
+
     def agregarZonas(self, zona):
         self._zonas.append(zona)
 
     def cantidadTotalAnimales(self):
         cont = 0
-        for i in self._zona:
+        for i in self._zonas:
             cont += i.cantidadAnimales()
         return cont
 
