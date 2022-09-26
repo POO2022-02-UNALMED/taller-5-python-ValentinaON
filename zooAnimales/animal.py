@@ -2,12 +2,19 @@
 class Animal:
     _totalAnimales = 0
     def __init__(self, nombre, edad, habitat, genero, zonas):
-        self._nombre = nombre
-        self._edad = edad
-        self._habitat = habitat
-        self._genero = genero
-        self._zonas = zonas
-        Animal._totalAnimales += 1
+        if zonas != None:
+            self._nombre = nombre
+            self._edad = edad
+            self._habitat = habitat
+            self._genero = genero
+            self._zonas = zonas
+            Animal._totalAnimales += 1
+        else:
+            self._nombre = nombre
+            self._edad = edad
+            self._habitat = habitat
+            self._genero = genero
+            Animal._totalAnimales += 1
 
     def movimiento():
         return "desplazarse"
