@@ -19,15 +19,15 @@ class Mamifero(Animal):
 
 
     @classmethod
-    def crearCaballo(cls,nombre,edad,genero):
-        caballo = cls(nombre, edad, "pradera", genero, True, 4)
+    def crearCaballo(cls,nombre,edad,genero,zona):
+        caballo = cls(nombre, edad, "pradera", genero, zona, True, 4)
         cls._listado.append(caballo)
         cls.caballos += 1
         return caballo
 
     @classmethod
-    def crearLeon(cls,nombre,edad,genero):
-        leon = cls(nombre, edad, "selva", genero, True, 4)
+    def crearLeon(cls,nombre,edad,genero,zona):
+        leon = cls(nombre, edad, "selva", genero, zona, True, 4)
         cls._listado.append(leon)
         cls.leones += 1
         return leon

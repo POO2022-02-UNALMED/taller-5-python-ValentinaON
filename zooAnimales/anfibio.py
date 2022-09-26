@@ -21,15 +21,15 @@ class Anfibio(Animal):
         return "saltar"
 
     @classmethod
-    def crearRana(cls,nombre,edad,genero):
-        rana = cls(nombre,edad,"selva",genero,"rojo",True)
+    def crearRana(cls,nombre,edad,genero,zona):
+        rana = cls(nombre,edad,"selva",genero,zona,"rojo",True)
         cls._listado.append(rana)
         cls.ranas += 1
         return rana
 
     @classmethod
-    def crearSalamandra(cls,nombre,edad,genero):
-        salamandra = cls(nombre,edad,"selva",genero,"negro y amarilli",False)
+    def crearSalamandra(cls,nombre,edad,genero,zona):
+        salamandra = cls(nombre,edad,"selva",genero,zona,"negro y amarilli",False)
         cls._listado.append(salamandra)
         cls.salamandras += 1
         return salamandra
